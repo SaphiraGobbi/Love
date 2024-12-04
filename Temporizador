@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temporizador</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #timer {
+      font-size: 48px;
+      color: #007BFF;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Temporizador</h1>
+  <div id="timer">00:00</div>
+  <button onclick="startTimer()">Iniciar</button>
+  <script>
+    let timer;
+    function startTimer() {
+      clearInterval(timer);
+      let seconds = 0;
+      timer = setInterval(() => {
+        seconds++;
+        const minutes = Math.floor(seconds / 60).toString().padStart(2, '0');
+        const secs = (seconds % 60).toString().padStart(2, '0');
+        document.getElementById('timer').textContent = `${minutes}:${secs}`;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
