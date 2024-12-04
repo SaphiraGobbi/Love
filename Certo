@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Tempo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 20px;
+    }
+    #timer {
+      font-size: 48px;
+      color: #007BFF;
+      margin-bottom: 20px;
+    }
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .image-container img {
+      width: 300px;
+      height: auto;
+      border: 2px solid #007BFF;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tempo Decorrido</h1>
+  <div id="timer">Calculando...</div>
+
+  <div class="image-container">
+    <!-- Adicione suas fotos aqui -->
+    <img src="https://via.placeholder.com/300" alt="Foto 1">
+    <img src="https://via.placeholder.com/300" alt="Foto 2">
+    <img src="https://via.placeholder.com/300" alt="Foto 3">
+  </div>
+
+  <script>
+    function updateTimer() {
+      // Data inicial: 20 de março de 2023, às 19:04
+      const startDate = new Date(2023, 2, 20, 19, 4, 0); // Mês é 2 porque começa em 0 (0 = Janeiro)
+
+      // Obtenha a data e hora atuais
+      const now = new Date();
+      
+      // Calcule a diferença em milissegundos
+      const diff = now - startDate;
+
+      // Converta para dias, horas, minutos e segundos
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      // Atualize o texto do temporizador
+      document.getElementById('timer').textContent = 
+        `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+    }
+
+    // Atualize o temporizador a cada segundo
+    setInterval(updateTimer, 1000);
+
+    // Inicialize imediatamente
+    updateTimer();
+  </script>
+</body>
+</html>
