@@ -35,10 +35,10 @@
 
   <div class="image-container">
     <!-- Aqui estão as 4 fotos. Substitua com seus próprios links ou fotos -->
-    <img src="https://via.placeholder.com/300" alt="Foto 1">
-    <img src="https://via.placeholder.com/300" alt="Foto 2">
-    <img src="https://via.placeholder.com/300" alt="Foto 3">
-    <img src="https://via.placeholder.com/300" alt="Foto 4">
+    <img src="IMG_20230928_130936_505.webp" alt="Foto 1">
+    <img src="IMG_20231222_190806_664.webp" alt="Foto 2">
+    <img src="IMG_20240827_195009_340.webp" alt="Foto 3">
+    <img src="IMG_20240829_091038_699.jpg" alt="Foto 4">
   </div>
 
   <script>
